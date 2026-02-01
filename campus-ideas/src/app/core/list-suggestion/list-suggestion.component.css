@@ -1,0 +1,152 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.search-bar {
+  margin-bottom: 30px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #4285f4;
+  box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.1);
+}
+
+.page-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.suggestions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.suggestion-card {
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.suggestion-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.suggestion-title {
+  color: #2c3e50;
+  margin: 0 0 15px 0;
+  font-size: 22px;
+}
+
+.suggestion-meta {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.category {
+  color: #4285f4;
+  font-weight: 600;
+}
+
+.date {
+  color: #666;
+}
+
+.suggestion-description {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.status-container {
+  margin-bottom: 15px;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-acceptee {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-refusee {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.status-attente {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-like {
+  background-color: #4285f4;
+  color: white;
+}
+
+.btn-like:hover {
+  background-color: #357ae8;
+  transform: scale(1.05);
+}
+
+.btn-favorite {
+  background-color: white;
+  color: #333;
+  border: 2px solid #ddd;
+}
+
+.btn-favorite:hover {
+  background-color: #f8f9fa;
+  border-color: #4285f4;
+  color: #4285f4;
+  transform: scale(1.05);
+}
+
+.no-results {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-style: italic;
+}
