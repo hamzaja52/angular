@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';  
+
 import { Suggestion } from '../../models/suggestion';
 
 @Component({
   selector: 'app-list-suggestion',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterLink], 
   templateUrl: './list-suggestion.component.html',
   styleUrls: ['./list-suggestion.component.css']
 })
@@ -53,6 +55,10 @@ export class ListSuggestionComponent {
   favorites: Suggestion[] = [];
   searchTerm: string = '';
 
+   ngOnInit(): void {
+    this.initializeSuggestions();
+    this.loadSuggestions();
+  }
   incrementLikes(suggestion: Suggestion): void {
     suggestion.nbLikes++;
   }
@@ -77,4 +83,27 @@ export class ListSuggestionComponent {
       suggestion.category.toLowerCase().includes(term)
     );
   }
+  
+
+  loadSuggestions(): void {
+    const storedSuggestions = localStorage.getItem('suggestions');
+    if (storedSuggestions) {
+      const parsed = JSON.parse(storedSuggestions);
+      
+      this.suggestions = parsed.map((s: any) => ({
+        ...s,
+        date: new Date(s.date)
+      }));
+    }
+  }
+   
+  initializeSuggestions(): void {
+    const stored = localStorage.getItem('suggestions');
+    if (!stored) {
+      localStorage.setItem('suggestions', JSON.stringify(this.suggestions));
+    }
+  }
+
+ 
+  
 }
