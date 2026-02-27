@@ -49,21 +49,36 @@
       </div>
 
       <!-- Boutons Like et Favoris (cachés si status = refusee) -->
-      <div class="action-buttons" *ngIf="suggestion.status !== 'refusee'">
-        <button 
-          class="btn btn-like" 
-          (click)="incrementLikes(suggestion)"
-        >
-          👍 Like {{ suggestion.nbLikes }}
-        </button>
-        
-        <button 
-          class="btn btn-favorite" 
-          (click)="addToFavorites(suggestion)"
-        >
-          ❤️ Ajouter aux favoris
-        </button>
-      </div>
+      <!-- Boutons Like, Favoris et Supprimer (cachés si status = refusee) -->
+<div class="action-buttons" *ngIf="suggestion.status !== 'refusee'">
+  <button 
+    class="btn btn-like" 
+    (click)="incrementLikes(suggestion)"
+  >
+    👍 Like {{ suggestion.nbLikes }}
+  </button>
+  
+  <button 
+    class="btn btn-favorite" 
+    (click)="addToFavorites(suggestion)"
+  >
+    ❤️ Ajouter aux favoris
+  </button>
+   
+  <button 
+    class="btn btn-edit" 
+    [routerLink]="['/editSuggestion', suggestion.id]"
+  >
+    ✏️ Modifier
+  </button>
+  
+  <button 
+    class="btn btn-delete" 
+    (click)="deleteSuggestion(suggestion.id)"
+  >
+    🗑️ Supprimer
+  </button>
+</div>
     </div>
   </div>
 

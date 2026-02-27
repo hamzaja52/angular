@@ -6,7 +6,9 @@
       
       <!-- Titre -->
       <div class="form-group">
-        <label for="title">Titre :</label>
+  <h2 class="form-title">
+  {{ isEditMode ? 'Modifier une suggestion' : 'Ajouter une suggestion' }}
+</h2>
         <input 
           type="text" 
           id="title" 
